@@ -158,19 +158,117 @@
           </div>
           <form role="form" [formGroup]="downloadForm" (ngSubmit)="downloadMyCv()">
             <div class="form-group mb-3">
-              <div class="input-group input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="tim-icons icon-email-85"> </i>
-                  </span>
+             <div class="row">
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="First name"
+                    type="text"
+                   formControlName="firstName"
+                  />
                 </div>
-                <input
-                  class="form-control"
-                  placeholder="Email"
-                  type="email"
-                 formControlName="email"
-                />
               </div>
+
+
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Last name"
+                    type="text"
+                   formControlName="lastName"
+                  />
+                </div>
+              </div>
+
+             </div>
+
+
+
+             <div class="row">
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Email"
+                    type="email"
+                   formControlName="email"
+                  />
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Company name"
+                    type="text"
+                   formControlName="company"
+                  />
+                </div>
+              </div>
+
+             </div>
+
+
+
+             <div class="row">
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Role"
+                    type="text"
+                   formControlName="role"
+                  />
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="tim-icons icon-email-85"> </i>
+                    </span>
+                  </div>
+                  <input
+                    class="form-control"
+                    placeholder="Website url"
+                    type="text"
+                   formControlName="website"
+                  />
+                </div>
+              </div>
+
+             </div>
             </div>
             
             

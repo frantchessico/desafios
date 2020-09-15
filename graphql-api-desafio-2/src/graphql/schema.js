@@ -2,11 +2,9 @@ import { makeExecutableSchema } from "graphql-tools";
 import { resolvers } from "./resolvers";
 
 const typeDefs = `
-    type Query {
-       
-        Users: [User]
-        getUser(_id: ID): User
-    }
+type Query {
+    Users(_id: ID): [User]
+}
 
     
     type User {
@@ -17,6 +15,13 @@ const typeDefs = `
         phoneNumber: String!
        
     }
+
+    
+
+	
+
+	
+
 
     type Mutation {
        

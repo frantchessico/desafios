@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frantchessico/desafios",
+    "website": "http://franciscoinoque.tech/"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.9",

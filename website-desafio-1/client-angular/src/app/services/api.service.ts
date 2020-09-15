@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ApiService {
-public api = 'https://franciscoinoquea-api.herokuapp.com/';
+  public api = 'https://franciscoinoquea-api.herokuapp.com/';
+
   constructor(private http: HttpClient) { }
 
   downloadCV(email) {

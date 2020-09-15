@@ -56,7 +56,12 @@ export class NavbarComponent implements OnInit {
     body.classList.add("landing-page");
 
     this.downloadForm = this.formBuilder.group({
-      email: ['', Validators.required]
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
+      company: ['', Validators.required],
+      role: ['', Validators.required],
+      website: ['', Validators.required]
     })
 
   }
@@ -65,11 +70,26 @@ export class NavbarComponent implements OnInit {
     this.uxMessage = 'Please wait...'
     this.default = ''
     const email = {
-      email:  this.downloadForm.value.email
+      firstName: this.downloadForm.value.firstName,
+      lastName: this.downloadForm.value.lastName,
+      email:  this.downloadForm.value.email,
+      company: this.downloadForm.value.company,
+      role: this.downloadForm.value.role,
+      website: this.downloadForm.value.website
     };
  
     this.api.downloadCV(email)
     .subscribe(data => {
+      console.log(data)
+
+      const isLength = {
+              company: "Your company name is too short",
+              email: "Email must be valid",
+              firstName: "Your first name is too short",
+              lastName: "Your last name is too short",
+              role: "Your role name is too short",
+              website: "Your website url  is too short",
+      }
      
       if(data.success ===  'Your message sent successfully') {
         this.uxMessage = ''
@@ -82,6 +102,40 @@ export class NavbarComponent implements OnInit {
         this.default = 'Get it'
         return this.toastr.error('Please your must be valid', 'Error!')
       }
+
+      if(data.firstName === isLength.firstName) {
+        this.uxMessage = ''
+        this.default = 'Get it'
+        return this.toastr.error('Your first name is too short', 'Error!')
+      }
+
+      if(data.lastName === isLength.lastName) {
+        this.uxMessage = ''
+        this.default = 'Get it'
+        return this.toastr.error('Your last name is too short', 'Error!')
+      }
+
+
+     
+
+      if(data.company === isLength.company) {
+        this.uxMessage = ''
+        this.default = 'Get it'
+        return this.toastr.error('Your company name is too short', 'Error!')
+      }
+
+      if(data.role === isLength.role) {
+        this.uxMessage = ''
+        this.default = 'Get it'
+        return this.toastr.error('Your role name is too short', 'Error!')
+      }
+
+      if(data.website === isLength.website) {
+        this.uxMessage = ''
+        this.default = 'Get it'
+        return this.toastr.error('Your website url is too short', 'Error!')
+      }
+
     })
   }
 }
